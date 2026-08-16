@@ -69,20 +69,46 @@ Para alimentar a base de conhecimento do **Google NotebookLM**, foram selecionad
 
 ---
 
-### 🛠️ "Cicatrizes" do Processo (Troubleshooting & Aprendizados de Prompting)
-
-* **Problema 1: Respostas Genéricas em Perguntas Ampla Demais**
-  * *Sintoma:* Ao perguntar apenas *"O que é o Drex?"*, o modelo gerava resumos superficiais de senso comum.
-  * *Correção:* Definição rigorosa de **personas** e inclusão explícita de termos técnicos balizadores (ex: *"analise sob a ótica de DvP, componibilidade e liquidação atômica"*), forçando a IA a buscar os relatórios técnicos do BCB.
-* **Problema 2: Confusão entre "Substituição" e "Coexistência"**
-  * *Sintoma:* Nas primeiras iterações, a IA tendia a comparar o Drex como um concorrente evolutivo direto do Pix.
-  * *Correção:* Inserção da restrição *"com base exclusivamente nos materiais do Banco Central sobre complementaridade e infraestrutura em camadas"*, alinhando a resposta ao posicionamento oficial do regulador.
-* **Problema 3: Alinhamento de Formatos Específicos**
-  * *Sintoma:* Pedidos de "análise de riscos" sem estrutura prévia resultavam em blocos extensos de texto corrido.
-  * *Correção:* Delimitação dos tópicos desejados no prompt (*1. Riscos Tecnológicos, 2. Implicações Regulatórias, 3. Mitigações e Governança*).
-
----
-
 ## 📖 4. Miniguia de Estudo (Entrega Final)
 
 ### 🔹 Resumo Estruturado do Assunto
+
+SISTEMA FINANCEIRO NACIONAL (SFN)
+                                    │
+         ┌──────────────────────────┴──────────────────────────┐
+         ▼                                                     ▼
+ CAMADA DE PAGAMENTOS                                 CAMADA DE LIQUIDAÇÃO
+     (PIX / Varejo)                                (DREX / Finanças Tokenizadas)
+
+
+* **Pix:** Arranjo de pagamento instantâneo do Banco Central que transfere depósitos bancários tradicionais de forma rápida e a custo marginal zero para o usuário final.
+* **Drex:** Plataforma de moeda digital baseada em tecnologia DLT que permite a representação digital de dinheiro e ativos (tokenização), viabilizando contratos inteligentes autoexecutáveis com entrega contra pagamento (DvP).
+* **Desafio Central do Drex:** Equacionar o trilema entre **privacidade de dados** (Sigilo Bancário / LGPD), **programabilidade** e **descentralização** em redes de registro distribuído.
+
+---
+
+### 📖 Glossário de Conceitos-Chave
+
+* **CBDC (*Central Bank Digital Currency*):** Moeda Digital de Banco Central; a representação oficial e soberana da moeda de um país em formato puramente digital sob emissão direta da autoridade monetária.
+* **DLT (*Distributed Ledger Technology*):** Tecnologia de Registro Distribuído; infraestrutura descentralizada de banco de dados compartilhada entre participantes autorizados da rede.
+* **Smart Contracts:** Contratos inteligentes autoexecutáveis escritos em código de programação, cujas cláusulas são cumpridas automaticamente quando condições prévias são satisfeitas.
+* **DvP (*Delivery versus Payment* / Entrega contra Pagamento):** Mecanismo de liquidação atômica onde a transferência do ativo (ex: veículo ou imóvel) e a liquidação do pagamento ocorrem de forma simultânea; se uma das partes falhar, a operação inteira é cancelada, eliminando o risco de contraparte.
+* **Tokenização:** Processo de converter direitos ou ativos físicos/financeiros (ex: Títulos Públicos Federais - TPFt) em representações digitais transacionáveis em rede DLT.
+* **ZKP (*Zero-Knowledge Proofs*):** Provas de Conhecimento Zero; método criptográfico que permite a uma parte provar que uma declaração é verdadeira sem revelar nenhuma informação além da veracidade do fato.
+* **RSFN (Rede do Sistema Financeiro Nacional):** Canal privado de comunicação restrito às instituições autorizadas pelo Banco Central, eliminando a exposição direta de nós à internet pública.
+
+---
+
+### 🔄 Prompts Reutilizáveis para Revisão Contínua
+
+Copie e cole estes templates no NotebookLM para novas análises sobre o tema:
+
+```markdown
+# Template 1: Resumo Didático com Analogias
+"Atue como um Professor de Finanças. Com base nos documentos carregados, explique o conceito de [CONCEITO/TERMO] utilizando uma analogia simples do cotidiano, destacando sua aplicação prática para uma pessoa leiga."
+
+# Template 2: Análise de Riscos e Governança
+"Atue como um Especialista em Risco Operacional. Extraia dos materiais as 3 principais vulnerabilidades relacionadas a [TEMA/TECNOLOGIA], apontando os impactos regulatórios (LGPD/Sigilo Bancário) e as contramedidas técnicas recomendadas."
+
+# Template 3: Matriz Comparativa Estruturada
+"Atue como um Analista de Mercado. Compare [TECNOLOGIA A] e [TECNOLOGIA B] em formato de tabela Markdown, considerando os critérios de: Natureza Jurídica, Casos de Uso, Camada de Atuação e Nível de Programabilidade."
