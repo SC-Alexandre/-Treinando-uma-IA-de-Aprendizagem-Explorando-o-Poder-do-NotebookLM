@@ -73,14 +73,6 @@ Para alimentar a base de conhecimento do **Google NotebookLM**, foram selecionad
 
 ### 🔹 Resumo Estruturado do Assunto
 
-SISTEMA FINANCEIRO NACIONAL (SFN)
-                                    │
-         ┌──────────────────────────┴──────────────────────────┐
-         ▼                                                     ▼
- CAMADA DE PAGAMENTOS                                 CAMADA DE LIQUIDAÇÃO
-     (PIX / Varejo)                                (DREX / Finanças Tokenizadas)
-
-
 * **Pix:** Arranjo de pagamento instantâneo do Banco Central que transfere depósitos bancários tradicionais de forma rápida e a custo marginal zero para o usuário final.
 * **Drex:** Plataforma de moeda digital baseada em tecnologia DLT que permite a representação digital de dinheiro e ativos (tokenização), viabilizando contratos inteligentes autoexecutáveis com entrega contra pagamento (DvP).
 * **Desafio Central do Drex:** Equacionar o trilema entre **privacidade de dados** (Sigilo Bancário / LGPD), **programabilidade** e **descentralização** em redes de registro distribuído.
